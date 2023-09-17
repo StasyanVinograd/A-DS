@@ -9,8 +9,10 @@ def time_for_buy(ticket, k):
         if ticket[i] < buyer:
             time += ticket[i]
             
-        if ticket[i] == buyer and i <= k:
-            time += ticket[i]
+        if ticket[i] == buyer:
+            time += buyer
+            if i > k:
+                time -= 1
             
         if ticket[i] > buyer:
             time += buyer
