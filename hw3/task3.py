@@ -5,7 +5,10 @@ def find_min(nums):
         return -1
         
     left, right = 0, len(nums) - 1
-
+    
+    while left < right and nums[left] == nums[right]:
+        left += 1
+        
     while left < right:
 
         middle = (left + right) // 2
@@ -23,3 +26,5 @@ print(find_min([5, 6, 6, 0, 0, 1, 2, 3, 4]) == 0)
 print(find_min([1]) == 1)
 print(find_min([]) == -1)
 print(find_min([1, 2, 2, 3]) == 1)
+print(find_min([2, 2, 2, 2, 2, 2, 2, 2, 1, 2]) == 1)
+print(find_min([2, 1, 2, 2, 2, 2, 2, 2, 2, 2]) == 1)
